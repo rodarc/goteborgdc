@@ -1,0 +1,76 @@
+# These lines define the goteborgdc/base library.
+base:
+  css:
+    # The SMACSS category, "base", is loaded before other categories. Drupal 8
+    # loads stylesheets based on the SMACSS ordering of:
+    # base, layout, component, state, theme
+    base:
+      # The {} brackets allow you to specify the additional options, weight and
+      # media. For example, you can specify this is a print media stylesheet by
+      # specifying: { media: print } Note: this isn't recommended since
+      # separate print stylesheets is bad for front-end performance.
+      components/asset-builds/css/base.css: {}
+  # If this library had JavaScript you could specify it like this:
+  # js:
+  #   js/script.js: {}
+  dependencies:
+    - goteborgdc/clearfix
+    - goteborgdc/visually-hidden
+
+layouts:
+  css:
+    # The SMACSS category, "layout", is loaded after "base" styles.
+    layout:
+      components/asset-builds/css/layouts.css: {}
+
+breadcrumb:
+  css:
+    component:
+      components/asset-builds/css/breadcrumb.css: {}
+  dependencies:
+    - goteborgdc/visually-hidden
+
+clearfix:
+  css:
+    component:
+      components/asset-builds/css/clearfix.css: {}
+
+footer:
+  css:
+    component:
+      components/asset-builds/css/footer.css: {}
+
+messages:
+  css:
+    component:
+      components/asset-builds/css/messages.css: {}
+
+more-link:
+  css:
+    component:
+      components/asset-builds/css/more-link.css: {}
+
+skip-link:
+  css:
+    component:
+      components/asset-builds/css/skip-link.css: {}
+
+tabs:
+  css:
+    component:
+      components/asset-builds/css/tabs.css: {}
+  dependencies:
+    - goteborgdc/clearfix
+    - goteborgdc/visually-hidden
+
+visually-hidden:
+  css:
+    component:
+      components/asset-builds/css/visually-hidden.css: {}
+
+# This is a temporary library that holds all of Zen 7.x-6.x's component styles.
+# @TODO: Finish porting all of these styles to proper Twig components.
+components:
+  css:
+    component:
+      components/asset-builds/css/components.css: {}
